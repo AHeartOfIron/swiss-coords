@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swiss-coords"
+version = "0.1.0"
+description = "Convert WGS84 (GPS) to and from the Swiss grids LV95 and LV03. No dependencies."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Illia Usachov" }]
+requires-python = ">=3.9"
+keywords = ["switzerland", "lv95", "lv03", "wgs84", "coordinates", "swisstopo", "gis"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: GIS",
+  "Environment :: Console",
+]
+
+[project.urls]
+Homepage = "https://github.com/AHeartOfIron/swiss-coords"
+
+[project.scripts]
+swisscoords = "swisscoords.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
